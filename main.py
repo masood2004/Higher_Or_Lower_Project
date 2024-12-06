@@ -3,6 +3,7 @@ import random
 from art import logo, vs
 from game_data import data
 
+os.system("cls")
 print(logo)
 
 def random_account():
@@ -29,14 +30,19 @@ while True:
     ask_user = input("Who has more followers? Type 'A' or 'B', or 'q' to quit: ").lower()
 
     if ask_user == 'q':
+        os.system("cls")
+        print(logo)
         print(f"Game over! Your final score is {score}.")
         break
 
     if ask_user == "a":
         if celebrity_1_followers > celebrity_2_followers:
+            os.system("cls")
+            print(logo)
             print("You guessed it correctly!")
             score += 1
             print(f"Current score: {score}")
+            print("------------------------------------------------")
             celebrity_1 = celebrity_2
             celebrity_2 = random_account()
         else:
@@ -48,9 +54,12 @@ while True:
             break
     elif ask_user == "b":
         if celebrity_2_followers > celebrity_1_followers:
+            os.system("cls")
+            print(logo)
             print("You guessed it correctly!")
             score += 1
             print(f"Current score: {score}")
+            print("------------------------------------------------")
             celebrity_2 = celebrity_1
             celebrity_1 = random_account()
         else:
